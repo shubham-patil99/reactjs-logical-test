@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h4>
+		Q1. Define an array of numbers (use any random numbers). Write a program to print only the even numbers of the array. Do not use any library functions, need to do via for loops only<br><br><br>
+	
+	Output:	
+	</h4>
+
+	<script type="text/javascript">
+
+		for(var a =1; a<=50; a++){
+			if(a % 2 == 0){
+				document.write(a + ' ,');
+			}
+		};
+</script>
+ 
+<h4>Q2. Find the maximum consecutive 1's in an array of 0's and 1's.</h4> <br>
+<script type="text/javascript">
+		 
+		var findMaxConsecutiveOnes = function(nums) {
+   		 var maxCount = 0;
+    	 var count = 0;
+    		for (var i in nums) {
+        		count = nums[i] === 1 ? count + 1 : 0;
+        		if (count > maxCount) {
+            		maxCount = count;
+        	}
+    	}
+    
+    return(maxCount)
+
+};
+</script>
+
+
+<h4>Q3. Suppose you have an array of 101 integers. This array is already sorted and all numbers in this array are consecutive. Each number only occurs once in the array except one number which occurs twice. Write a js code to find the repeated number. <br><br>
+OutPut:</h4>
+<script>
+    function printRepeating(arr , size)
+    {
+        var i, j;
+        document.write("Repeated number is :");
+        for (i = 0; i < size; i++)
+        {
+            for (j = i + 1; j < size; j++)
+            {
+                if (arr[i] == arr[j])
+                    document.write(arr[i] + " ");
+            }
+        }
+    }
+ 
+var arr = [0,1,2,3,4,5,6,7,7,8,9,10];
+var arr_size = arr.length;
+printRepeating(arr, arr_size);
+
+</script>
+
+<h4>Q4. Let’s see we an api url www.example.com/api/get/1 Write a sample code to call this rest api and display the result.</h4>
+<script type="text/javascript">
+	const request = new XMLHttpRequest();
+	request.open("GET", "www.example.com/api/get/1");
+	request.send();
+	request.onload = () => {
+		if (request.status === 200){
+			console.log(JSON.parse(request.response));
+		}else {
+			console.log(request)
+			console.log(`error ${request.status}`)
+		}
+	}
+	
+	</script>
+
+<h4>Q5. Assume there is a object of this format 
+var obj = {
+ “id” : 4, “name” : “abc”,
+ “id” : 10, “name” : “ab2”,
+ “id” : 5, “name” : “abc3”,
+ “id” : 6, “name” : “abc5”
+}
+It can be a dictionary or java object, as per your language of choice. But its key/value pair dictionary simply.
+
+Write a code to sort the object by id 
+</h4>
+	<script type="text/javascript">
+		var obj = [{
+		 “id” : 4, “name” : “abc”,
+		 “id” : 10, “name” : “abc2”,
+		 “id” : 5, “name” : “abc3”,
+		 “id” : 6, “name” : “abc5”
+		}];
+
+		obj.sort(function(a, b) {
+    if (a.id !== b.id) {
+        return a.id - b.id
+    }
+    if (a.name === b.name) {
+      return 0;
+    }
+    return a.name > b.name ? 1 : -1;
+});
+
+	</script>
+</body>
+</html>
